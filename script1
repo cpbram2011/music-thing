@@ -1,0 +1,32 @@
+
+notes = [i for i in range(12)]
+pitches = ['C','Db','D','Eb','E','F','Gb','G','Ab','A','Bb','B']
+
+
+class SevDegScale:
+  def __init__(self, lst):
+    self.lst = lst
+
+
+def maj_triad(n):
+  return [n, (n+4)%12, (n+7)%12]
+  
+ion = SevDegScale([0, 2, 4, 5, 7, 9, 11])
+
+
+print(ion.lst)
+
+
+def pitched(lst):
+  a = []
+  for i in lst:
+    a.append(pitches[i])
+  return a
+  
+print(pitched(ion.lst))
+    
+chord_scale = []
+for i in ion.lst:
+  chord_scale.append(pitched(maj_triad(i)))
+
+print(chord_scale)
